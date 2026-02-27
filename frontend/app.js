@@ -3,6 +3,8 @@ const voiceBtn = document.getElementById("voiceBtn");
 const speakBtn = document.getElementById("speakBtn");
 const queryInput = document.getElementById("query");
 const languageSelect = document.getElementById("language");
+const ageYearsInput = document.getElementById("ageYears");
+const locationInput = document.getElementById("locationInput");
 const answerEl = document.getElementById("answer");
 const disclaimerEl = document.getElementById("disclaimer");
 const nextStepsEl = document.getElementById("nextSteps");
@@ -46,8 +48,15 @@ function renderList(container, items, formatter) {
 async function askAssistant(mode = "text") {
   const query = queryInput.value.trim();
   const language = languageSelect.value;
+  const location = locationInput.value.trim();
+  const ageValue = ageYearsInput.value.trim();
+  const ageYears = ageValue === "" ? null : Number(ageValue);
   if (!query) {
     answerEl.textContent = "Please enter a question first.";
+    return;
+  }
+  if (ageYears !== null && (Number.isNaN(ageYears) || ageYears < 0 || ageYears > 120)) {
+    answerEl.textContent = "Please enter a valid age between 0 and 120.";
     return;
   }
 
@@ -58,7 +67,13 @@ async function askAssistant(mode = "text") {
   const response = await fetch("/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query, language, mode }),
+    body: JSON.stringify({
+      query,
+      language,
+      mode,
+      age_years: ageYears,
+      location: location || null,
+    }),
   });
 
   if (!response.ok) {

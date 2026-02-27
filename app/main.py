@@ -37,6 +37,7 @@ assistant = HealthAssistant(
     scheme_service=scheme_service,
     disease_service=disease_service,
     pregnancy_service=pregnancy_service,
+    hospital_service=hospital_service,
 )
 
 app = FastAPI(
@@ -69,7 +70,12 @@ def health_check() -> dict:
 @app.post("/chat", response_model=ChatResponse)
 def chat(payload: ChatRequest) -> ChatResponse:
     language = normalize_language(payload.language)
-    return assistant.answer(query=payload.query, language=language)
+    return assistant.answer(
+        query=payload.query,
+        language=language,
+        location=payload.location,
+        age_years=payload.age_years,
+    )
 
 
 @app.get("/schemes")

@@ -7,6 +7,7 @@ class ChatRequest(BaseModel):
     query: str = Field(..., min_length=2, max_length=800)
     language: str = Field(default="en", min_length=2, max_length=5)
     mode: Literal["text", "voice"] = "text"
+    age_years: int | None = Field(default=None, ge=0, le=120)
     location: str | None = Field(default=None, max_length=120)
 
 

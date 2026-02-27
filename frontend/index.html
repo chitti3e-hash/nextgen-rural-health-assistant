@@ -23,6 +23,23 @@
           <option value="bn">বাংলা</option>
         </select>
 
+        <div class="inline-fields">
+          <div class="field-group">
+            <label for="ageYears">Age (years)</label>
+            <input id="ageYears" type="number" min="0" max="120" placeholder="e.g., 45" />
+          </div>
+
+          <div class="field-group">
+            <label for="locationInput">Location or Pincode (India)</label>
+            <input
+              id="locationInput"
+              type="text"
+              maxlength="120"
+              placeholder="e.g., 560001 or Bengaluru"
+            />
+          </div>
+        </div>
+
         <label for="query">Ask your health question</label>
         <textarea
           id="query"

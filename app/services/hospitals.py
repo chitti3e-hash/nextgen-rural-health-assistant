@@ -105,6 +105,41 @@ class HospitalLocator:
 
         raise HospitalLookupError("Unable to resolve pincode location at the moment.")
 
+    @staticmethod
+    def _extract_pincode_from_text(value: str | None) -> str | None:
+        if not value:
+            return None
+        match = re.search(r"\b[1-9][0-9]{5}\b", value)
+        return match.group(0) if match else None
+
+    def _resolve_coordinates_from_location(self, location: str) -> tuple[float, float, str, str | None]:
+        normalized = location.strip()
+        if not normalized:
+            raise HospitalLookupError("Location text is empty.")
+
+        headers = {"User-Agent": "nextgen-health-assistant/1.0"}
+        with httpx.Client(timeout=15.0, headers=headers) as client:
+            response = client.get(
+                "https://nominatim.openstreetmap.org/search",
+                params={
+                    "q": f"{normalized}, India",
+                    "format": "jsonv2",
+                    "addressdetails": "1",
+                    "limit": "1",
+                },
+            )
+            response.raise_for_status()
+            payload = response.json()
+            if not payload:
+                raise HospitalLookupError("Unable to resolve location in India at the moment.")
+
+            top = payload[0]
+            latitude = float(top["lat"])
+            longitude = float(top["lon"])
+            resolved_location = top.get("display_name", normalized)
+            detected_pincode = self._extract_pincode_from_text(resolved_location)
+            return latitude, longitude, resolved_location, detected_pincode
+
     def _search_hospitals(self, latitude: float, longitude: float, max_results: int) -> list[dict]:
         query = f"""
 [out:json][timeout:30];
@@ -214,3 +249,43 @@ out center {max_results};
                 "Hospital lookup failed right now. Please try again, or ask a nearby PHC/ASHA worker."
             )
 
+    def lookup_nearest_by_location(self, location: str, limit: int = 5) -> dict:
+        normalized_limit = max(1, min(limit, 10))
+        cache_key = f"loc::{location.strip().lower()}"
+        now = int(time.time())
+
+        cached_entry = self._cache.get(cache_key)
+        if cached_entry and (now - int(cached_entry.get("timestamp", 0)) < self.cache_ttl_seconds):
+            return {
+                "pincode": cached_entry.get("pincode", ""),
+                "location": cached_entry["location"],
+                "source": cached_entry["source"],
+                "cached": True,
+                "hospitals": cached_entry["hospitals"][:normalized_limit],
+            }
+
+        try:
+            latitude, longitude, resolved_location, detected_pincode = self._resolve_coordinates_from_location(location)
+            hospitals = self._search_hospitals(latitude, longitude, max_results=25)
+            if not hospitals:
+                raise HospitalLookupError("No hospitals were found near this location.")
+
+            entry = {
+                "timestamp": now,
+                "location": resolved_location,
+                "source": "OpenStreetMap Nominatim + Overpass",
+                "hospitals": hospitals,
+                "pincode": detected_pincode or "",
+            }
+            self._cache[cache_key] = entry
+            self._save_cache()
+
+            return {
+                "pincode": entry["pincode"],
+                "location": resolved_location,
+                "source": entry["source"],
+                "cached": False,
+                "hospitals": hospitals[:normalized_limit],
+            }
+        except (httpx.HTTPError, HospitalLookupError):
+            raise HospitalLookupError("Location-based hospital lookup failed right now. Please retry with pincode.")
