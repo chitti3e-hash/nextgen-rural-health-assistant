@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+__pycache__
+.pytest_cache
+*.pyc
+*.pyo
+*.log
+.DS_Store
+
+certs
+logs
+nextgen-source-*.zip
+nextgen-source-*.tar.gz
+nextgen-source-*.sha256
+nextgen_recovery_*.py

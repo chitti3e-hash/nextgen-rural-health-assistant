@@ -139,6 +139,23 @@ pip install -r requirements.txt
 ./start-lan.sh
 ```
 
+## Stable public URL (non-expiring link approach)
+
+`trycloudflare.com` quick tunnel links are temporary by design.
+For a stable long-lived URL, deploy from GitHub to a cloud host.
+
+### Option: Render (stable URL, no custom domain required)
+
+This repo includes `Dockerfile` + `render.yaml`.
+
+1. Open [https://dashboard.render.com](https://dashboard.render.com)
+2. Create **New Web Service** from GitHub repo:
+   `https://github.com/chitti3e-hash/nextgen-rural-health-assistant`
+3. Render will build automatically and assign a stable URL like:
+   `https://nextgen-rural-health-assistant.onrender.com`
+
+Note: free plans may sleep when idle, but the URL does not expire.
+
 ## API endpoints
 
 - `GET /health` – service health check
