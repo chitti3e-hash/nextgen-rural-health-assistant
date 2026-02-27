@@ -156,6 +156,22 @@ This repo includes `Dockerfile` + `render.yaml`.
 
 Note: free plans may sleep when idle, but the URL does not expire.
 
+### Current live deployment
+
+- App URL: `https://nextgen-rural-health-assistant.onrender.com`
+- Health check: `https://nextgen-rural-health-assistant.onrender.com/health`
+
+### Add your custom domain on Render
+
+1. Open Render service settings → **Custom Domains**.
+2. Add your subdomain (example: `health.yourdomain.com`).
+3. Copy the DNS target shown by Render.
+4. In your DNS provider, create a `CNAME`:
+   - Host/Name: `health`
+   - Target/Value: `<render-provided-target>`
+5. Return to Render and click **Verify**.
+6. Enable HTTP→HTTPS redirect after SSL is issued.
+
 ## API endpoints
 
 - `GET /health` – service health check
