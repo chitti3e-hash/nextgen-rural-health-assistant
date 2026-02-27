@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGen Rural Health Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>NextGen Multilingual Health Assistant</h1>
+        <p class="subtitle">Voice + Text guidance for rural healthcare access</p>
+      </header>
+
+      <section class="card controls">
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ta">தமிழ்</option>
+          <option value="te">తెలుగు</option>
+          <option value="bn">বাংলা</option>
+        </select>
+
+        <label for="query">Ask your health question</label>
+        <textarea
+          id="query"
+          rows="4"
+          placeholder="Example: My father has fever for 2 days and feels weak. What should we do?"
+        ></textarea>
+
+        <div class="actions">
+          <button id="askBtn" type="button">Get Guidance</button>
+          <button id="voiceBtn" type="button">🎤 Voice Input</button>
+          <button id="speakBtn" type="button">🔊 Speak Response</button>
+        </div>
+      </section>
+
+      <section class="card" id="resultCard">
+        <h2>Assistant Response</h2>
+        <p id="urgency" class="badge">Status: Waiting</p>
+        <p id="answer">Your grounded response will appear here.</p>
+        <p id="disclaimer" class="disclaimer"></p>
+
+        <h3>Next Steps</h3>
+        <ul id="nextSteps"></ul>
+
+        <h3>Sources</h3>
+        <ul id="sources"></ul>
+      </section>
+
+      <section class="card" id="diseaseCard">
+        <h2>Disease Treatment Knowledge</h2>
+        <p class="subtitle">Search disease-wise treatment, medicine guidance, and safe home-care remedies</p>
+
+        <div class="hospital-controls">
+          <input id="diseaseQuery" type="text" maxlength="120" placeholder="Enter disease name (e.g., dengue, diabetes, asthma)" />
+          <button id="diseaseBtn" type="button">Search Disease Info</button>
+        </div>
+
+        <p id="diseaseMeta">Disease information will appear here.</p>
+        <pre id="diseaseResult" class="disease-result">No disease selected yet.</pre>
+      </section>
+
+      <section class="card" id="hospitalCard">
+        <h2>Nearest Hospitals by Pincode</h2>
+        <p class="subtitle">Search hospitals near any Indian 6-digit pincode</p>
+
+        <div class="hospital-controls">
+          <input id="pincode" type="text" maxlength="6" placeholder="Enter pincode (e.g., 560001)" />
+          <button id="hospitalBtn" type="button">Find Nearest Hospitals</button>
+        </div>
+
+        <p id="hospitalMeta">Location details will appear here.</p>
+        <ul id="hospitalResults"></ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

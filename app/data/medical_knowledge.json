@@ -1,0 +1,83 @@
+[
+  {
+    "id": "med-001",
+    "title": "Fever home care and warning signs",
+    "category": "general",
+    "language": "en",
+    "content": "For mild fever, rest, drink clean fluids, and monitor temperature regularly. Seek urgent care for fever above 103°F, confusion, breathing difficulty, seizure, or fever lasting more than three days.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "med-002",
+    "title": "Diarrhea and dehydration prevention",
+    "category": "general",
+    "language": "en",
+    "content": "Use ORS solution after each loose stool and continue feeding. Warning signs include very little urination, sunken eyes, persistent vomiting, blood in stool, or lethargy; these require immediate medical care.",
+    "source": "UNICEF/WHO diarrhea care guidance"
+  },
+  {
+    "id": "med-003",
+    "title": "High blood pressure basics",
+    "category": "chronic",
+    "language": "en",
+    "content": "High blood pressure often has no early symptoms and should be checked regularly. Reduce salt intake, avoid tobacco, stay active, and take prescribed medicines daily without skipping.",
+    "source": "NPCDCS & WHO hypertension guidance"
+  },
+  {
+    "id": "med-004",
+    "title": "Diabetes lifestyle support",
+    "category": "chronic",
+    "language": "en",
+    "content": "People with diabetes should monitor blood sugar, eat balanced meals with controlled carbohydrates, exercise most days, and take prescribed medication on schedule. Foot wounds, repeated low sugar episodes, or vomiting need clinical review.",
+    "source": "Ministry of Health diabetes guidance"
+  },
+  {
+    "id": "med-005",
+    "title": "Pregnancy danger signs",
+    "category": "maternal",
+    "language": "en",
+    "content": "During pregnancy, immediate medical attention is needed for vaginal bleeding, severe headache, swelling of face/hands, blurred vision, reduced fetal movement, high fever, or convulsions.",
+    "source": "RMNCH+A maternal care protocol"
+  },
+  {
+    "id": "med-006",
+    "title": "Malaria early care",
+    "category": "infectious",
+    "language": "en",
+    "content": "Fever with chills, sweating, and body pain in malaria-prone areas should be tested early. Do not self-medicate with incomplete treatment; visit a health facility for rapid diagnostic testing and complete therapy.",
+    "source": "NVBDCP malaria advisory"
+  },
+  {
+    "id": "med-007",
+    "title": "बुखार में प्राथमिक देखभाल",
+    "category": "general",
+    "language": "hi",
+    "content": "हल्के बुखार में आराम करें, स्वच्छ पानी पिएं और तापमान देखते रहें। तेज बुखार, सांस में दिक्कत, बेहोशी, दौरा या तीन दिन से अधिक बुखार होने पर तुरंत अस्पताल जाएं।",
+    "source": "नेशनल हेल्थ पोर्टल"
+  },
+  {
+    "id": "med-008",
+    "title": "दस्त और ORS",
+    "category": "general",
+    "language": "hi",
+    "content": "दस्त में हर बार पतला मल होने पर ORS दें और भोजन जारी रखें। पेशाब कम होना, उल्टी रुकना नहीं, मल में खून, अत्यधिक सुस्ती जैसे लक्षण होने पर तुरंत डॉक्टर से संपर्क करें।",
+    "source": "WHO/UNICEF मार्गदर्शिका"
+  },
+  {
+    "id": "med-009",
+    "title": "Hypertension lifestyle in simple terms",
+    "category": "chronic",
+    "language": "en",
+    "content": "Daily walking, less salty packaged food, and regular BP checks at PHC help prevent complications. Severe headache with vision changes or chest pain needs emergency evaluation.",
+    "source": "Ayushman Arogya Mandir NCD leaflet"
+  },
+  {
+    "id": "med-010",
+    "title": "Child respiratory infection red flags",
+    "category": "child-health",
+    "language": "en",
+    "content": "Fast breathing, chest indrawing, inability to drink, repeated vomiting, or bluish lips in children are danger signs. These symptoms require immediate referral to the nearest health facility.",
+    "source": "IMNCI danger signs guidance"
+  }
+]
+

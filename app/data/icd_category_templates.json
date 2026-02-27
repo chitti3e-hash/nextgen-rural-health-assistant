@@ -1,0 +1,458 @@
+{
+  "rules": [
+    {
+      "name": "infectious",
+      "keywords": ["infectious", "parasitic", "virus", "bacterial", "fever", "communicable"],
+      "category": "infectious",
+      "treatment_summary": "Management depends on confirmed diagnosis, severity, and comorbidities. Early clinical review and timely referral reduce complications.",
+      "medicine_guidance": [
+        "Use medicines only after diagnosis confirmation by a licensed clinician.",
+        "Avoid self-use of antibiotics, steroids, or injections.",
+        "Paracetamol-type fever/pain relief may be advised in selected cases.",
+        "Hospital treatment may be required for moderate or severe disease."
+      ],
+      "home_care": [
+        "Maintain hydration and rest.",
+        "Follow hygiene and infection-prevention measures.",
+        "Monitor temperature and symptom progression.",
+        "Seek timely follow-up if symptoms persist or worsen."
+      ],
+      "red_flags": ["Breathing difficulty", "Confusion", "Persistent vomiting", "Bleeding or severe weakness"]
+    },
+    {
+      "name": "cardiovascular",
+      "keywords": ["circulatory", "heart", "cardiac", "vascular", "hypertension", "stroke"],
+      "category": "cardiovascular",
+      "treatment_summary": "Long-term management combines lifestyle risk reduction, regular monitoring, and physician-guided medicines.",
+      "medicine_guidance": [
+        "Cardiac medicines should be started and adjusted only by a doctor.",
+        "Do not stop BP/heart medicines abruptly.",
+        "Drug combinations and doses depend on clinical profile.",
+        "Emergency protocols apply for acute chest pain or neurological deficits."
+      ],
+      "home_care": [
+        "Reduce salt and tobacco exposure.",
+        "Maintain physical activity as medically advised.",
+        "Track blood pressure and risk factors regularly.",
+        "Keep scheduled follow-up visits."
+      ],
+      "red_flags": ["Chest pain", "Sudden weakness/speech changes", "Severe breathlessness", "Fainting"]
+    },
+    {
+      "name": "respiratory",
+      "keywords": ["respiratory", "lung", "asthma", "copd", "airway", "breathing"],
+      "category": "respiratory",
+      "treatment_summary": "Treatment plans are guided by severity and often combine controller care, trigger control, and rescue protocols.",
+      "medicine_guidance": [
+        "Use inhalers or oral medicines exactly as prescribed.",
+        "Controller and reliever therapies serve different roles.",
+        "Avoid self-starting steroids without clinical review.",
+        "Urgent oxygen/hospital care may be required in severe episodes."
+      ],
+      "home_care": [
+        "Avoid smoke, dust, and known triggers.",
+        "Use breathing exercises and hydration support.",
+        "Keep action plan for worsening symptoms.",
+        "Follow vaccination and prevention advice."
+      ],
+      "red_flags": ["Unable to speak full sentences", "Bluish lips", "No relief with routine medicines", "Severe respiratory distress"]
+    },
+    {
+      "name": "endocrine",
+      "keywords": ["endocrine", "metabolic", "diabetes", "thyroid", "hormone"],
+      "category": "endocrine",
+      "treatment_summary": "Management is usually long-term and combines structured lifestyle plans with physician-guided medicines.",
+      "medicine_guidance": [
+        "Do not self-adjust endocrine medicine doses.",
+        "Routine lab monitoring guides treatment decisions.",
+        "Medication timing and adherence are important for outcomes.",
+        "Special situations (pregnancy, elderly, CKD) require individualized plans."
+      ],
+      "home_care": [
+        "Follow nutrition and activity guidance.",
+        "Track key metrics such as sugar/BP/weight as advised.",
+        "Maintain medication schedule consistently.",
+        "Keep periodic specialist follow-up."
+      ],
+      "red_flags": ["Confusion", "Persistent vomiting", "Severe weakness", "Breathlessness or chest symptoms"]
+    },
+    {
+      "name": "neurological",
+      "keywords": ["nervous", "brain", "neurology", "seizure", "headache", "stroke"],
+      "category": "neurological",
+      "treatment_summary": "Neurological conditions need early clinical diagnosis and cause-specific therapy with follow-up monitoring.",
+      "medicine_guidance": [
+        "Use neurologic medicines only under specialist guidance.",
+        "Do not stop anti-seizure or chronic neurologic medicines suddenly.",
+        "Acute neurologic emergencies require immediate hospital care.",
+        "Rehabilitation therapy may be part of treatment."
+      ],
+      "home_care": [
+        "Maintain safety precautions and regular sleep.",
+        "Track episodes and triggers.",
+        "Support medication adherence and rehab plans.",
+        "Seek early help for new deficits."
+      ],
+      "red_flags": ["Sudden weakness/speech changes", "Seizure lasting over 5 minutes", "Persistent confusion", "Severe sudden headache"]
+    },
+    {
+      "name": "gastrointestinal",
+      "keywords": ["digestive", "gastro", "stomach", "intestinal", "liver", "bowel"],
+      "category": "gastrointestinal",
+      "treatment_summary": "Treatment depends on cause and may include hydration, diet adjustments, and clinician-prescribed medicines.",
+      "medicine_guidance": [
+        "Use prescription gastrointestinal medicines only after diagnosis.",
+        "Avoid prolonged self-medication for persistent symptoms.",
+        "Oral rehydration support may be required for fluid loss.",
+        "Targeted therapy is needed when infection/inflammation is confirmed."
+      ],
+      "home_care": [
+        "Use safe food and clean water.",
+        "Eat light, balanced meals.",
+        "Maintain hydration.",
+        "Track stool/vomiting/abdominal pain changes."
+      ],
+      "red_flags": ["Blood in stool or vomit", "Severe abdominal pain", "Persistent vomiting", "Dehydration signs"]
+    },
+    {
+      "name": "mental-health",
+      "keywords": ["mental", "depression", "anxiety", "behavior", "psychiatric", "psych"],
+      "category": "mental-health",
+      "treatment_summary": "Care combines counselling-based therapy, social support, and medicines for selected moderate-severe cases.",
+      "medicine_guidance": [
+        "Psychiatric medicines should be prescribed and monitored by clinicians.",
+        "Do not stop mental-health medicines abruptly.",
+        "Therapy and lifestyle support improve outcomes.",
+        "Self-harm thoughts need immediate emergency support."
+      ],
+      "home_care": [
+        "Maintain regular sleep and routine.",
+        "Stay socially connected and seek counselling support.",
+        "Avoid alcohol/substance misuse.",
+        "Escalate early for worsening symptoms."
+      ],
+      "red_flags": ["Self-harm thoughts", "Not eating/drinking", "Severe agitation", "Psychotic symptoms"]
+    },
+    {
+      "name": "musculoskeletal",
+      "keywords": ["musculoskeletal", "joint", "bone", "arthritis", "spine"],
+      "category": "musculoskeletal",
+      "treatment_summary": "Management includes pain control, physiotherapy, mobility support, and specialist interventions when required.",
+      "medicine_guidance": [
+        "Pain medicines should consider kidney/GI/cardiac safety.",
+        "Long-term anti-inflammatory use needs medical supervision.",
+        "Condition-specific medicines may be needed for inflammatory disease.",
+        "Procedural/surgical care may be advised in advanced cases."
+      ],
+      "home_care": [
+        "Follow joint-strengthening and flexibility exercises.",
+        "Use weight and posture management strategies.",
+        "Apply local heat/cold as advised.",
+        "Avoid high-risk strain during flare-ups."
+      ],
+      "red_flags": ["Hot swollen joint with fever", "Sudden inability to bear weight", "Post-trauma deformity", "Progressive weakness"]
+    },
+    {
+      "name": "dermatology",
+      "keywords": ["skin", "dermat", "eczema", "psoriasis", "rash", "fungal"],
+      "category": "dermatology",
+      "treatment_summary": "Skin care generally includes trigger control, topical therapy, and specialist review for recurrent or severe disease.",
+      "medicine_guidance": [
+        "Use topical medicines only for recommended duration and strength.",
+        "Avoid steroid-combination creams without clinical advice.",
+        "Systemic therapies require clinician monitoring.",
+        "Treat secondary infection as prescribed."
+      ],
+      "home_care": [
+        "Keep skin clean and moisturized.",
+        "Avoid irritants and scratching.",
+        "Use breathable clothing and hygiene measures.",
+        "Follow dermatology follow-up for persistent lesions."
+      ],
+      "red_flags": ["Rapidly spreading rash", "Fever with skin lesions", "Facial/eye swelling", "Pus or severe pain"]
+    },
+    {
+      "name": "oncology",
+      "keywords": ["neoplasm", "cancer", "tumour", "tumor", "malign", "oncology"],
+      "category": "oncology",
+      "treatment_summary": "Cancer care is stage-based and usually combines surgery, systemic therapy, radiation, and supportive care under specialist teams.",
+      "medicine_guidance": [
+        "Cancer medicines require specialist oncology prescription and monitoring.",
+        "Do not use alternative or over-the-counter products as cancer replacements.",
+        "Treatment cycles and side-effect monitoring are individualized.",
+        "Urgent hospital review is needed for fever, bleeding, dehydration, or severe weakness during treatment."
+      ],
+      "home_care": [
+        "Maintain nutrition and hydration with symptom-directed support.",
+        "Track fever, pain, appetite, and weight regularly.",
+        "Follow infection prevention advice during immunosuppression.",
+        "Keep all oncology follow-ups and treatment schedules."
+      ],
+      "red_flags": ["High fever during therapy", "Uncontrolled bleeding", "Persistent vomiting/dehydration", "Breathlessness or chest pain"]
+    },
+    {
+      "name": "trauma-toxicology",
+      "keywords": ["injury", "poison", "poisoning", "burn", "fracture", "external causes", "trauma"],
+      "category": "trauma-toxicology",
+      "treatment_summary": "Injury and poisoning require rapid severity assessment, stabilization, and cause-specific emergency management.",
+      "medicine_guidance": [
+        "Poisoning care should be hospital-guided; do not induce vomiting unless advised by clinicians.",
+        "Pain medicines and antibiotics should follow doctor evaluation of injury type.",
+        "Tetanus prophylaxis may be required in wound injuries.",
+        "Fracture and major trauma may need imaging, procedures, or surgery."
+      ],
+      "home_care": [
+        "Use first aid and immobilization for suspected fractures or severe sprains.",
+        "Keep wounds clean and covered using sterile dressing.",
+        "Avoid unverified home antidotes for poisoning.",
+        "Monitor for swelling, fever, worsening pain, or reduced limb movement."
+      ],
+      "red_flags": ["Loss of consciousness", "Severe bleeding", "Breathing difficulty after exposure", "Sudden neurological decline"]
+    },
+    {
+      "name": "obstetric-maternal",
+      "keywords": ["pregnancy", "childbirth", "puerperium", "maternal", "antenatal", "postpartum"],
+      "category": "obstetric-maternal",
+      "treatment_summary": "Maternal care requires structured antenatal/postnatal follow-up, risk stratification, and timely institutional referral.",
+      "medicine_guidance": [
+        "Use pregnancy medicines only when prescribed as pregnancy-safe by clinicians.",
+        "Iron, calcium, folic acid, and vaccinations should follow ANC protocols.",
+        "Avoid self-medication, herbal formulations, or non-prescribed painkillers in pregnancy.",
+        "High-risk pregnancy signs require immediate facility-based care."
+      ],
+      "home_care": [
+        "Attend all ANC/PNC visits and track blood pressure and fetal movements.",
+        "Maintain hydration, balanced diet, and adequate rest.",
+        "Keep MCP card and emergency referral plan ready.",
+        "Seek early care for reduced fetal movement, bleeding, or severe swelling."
+      ],
+      "red_flags": ["Vaginal bleeding", "Severe headache/vision changes", "Reduced fetal movements", "Convulsions or severe breathlessness"]
+    },
+    {
+      "name": "neonatal-perinatal",
+      "keywords": ["perinatal", "newborn", "neonatal", "birth asphyxia", "prematurity"],
+      "category": "neonatal-perinatal",
+      "treatment_summary": "Perinatal and newborn conditions need early clinician assessment, thermal care, feeding support, and referral for complications.",
+      "medicine_guidance": [
+        "Newborn medicines and dosages must be strictly clinician-prescribed.",
+        "Avoid home antibiotics or syrup dosing without pediatric advice.",
+        "Breastfeeding support and neonatal monitoring are core interventions.",
+        "Infections, jaundice, and breathing issues may require urgent NICU care."
+      ],
+      "home_care": [
+        "Ensure warmth, clean cord care, and exclusive breastfeeding support.",
+        "Track feeding frequency, urine output, and activity levels.",
+        "Maintain hygiene and avoid unclean traditional applications.",
+        "Seek immediate care for poor feeding, fever, or lethargy."
+      ],
+      "red_flags": ["Fast/poor breathing", "Refusal to feed", "Seizure/jitteriness", "High fever or low temperature"]
+    },
+    {
+      "name": "genitourinary",
+      "keywords": ["genitourinary", "kidney", "renal", "urinary", "bladder", "prostate"],
+      "category": "genitourinary",
+      "treatment_summary": "Genitourinary care depends on diagnosis and may require infection control, obstruction management, or long-term renal follow-up.",
+      "medicine_guidance": [
+        "Use antibiotics and kidney-related medicines only on prescription.",
+        "Dose adjustments are needed in chronic kidney disease.",
+        "Avoid nephrotoxic self-medication and unsupervised painkiller use.",
+        "Severe urinary retention, sepsis, or renal dysfunction needs urgent admission."
+      ],
+      "home_care": [
+        "Maintain hydration unless fluid restriction is advised.",
+        "Track urine output, swelling, and blood pressure changes.",
+        "Use hygiene measures to reduce recurrent infections.",
+        "Follow nephrology/urology follow-up plans."
+      ],
+      "red_flags": ["No urine output", "Blood in urine with clots", "Severe flank pain with fever", "Rapidly increasing swelling/breathlessness"]
+    },
+    {
+      "name": "hematology",
+      "keywords": ["blood", "hematology", "anemia", "coagulation", "hemolytic", "thrombocytopenia"],
+      "category": "hematology",
+      "treatment_summary": "Blood disorders need cause-based treatment with lab monitoring, supportive care, and specialist referral when severe.",
+      "medicine_guidance": [
+        "Iron, vitamin, transfusion, or disease-specific therapies should be clinician-guided.",
+        "Do not self-use blood-thinning or clotting medicines.",
+        "Platelet/coagulation disorders need monitored treatment plans.",
+        "Severe anemia, bleeding, or infection risk requires urgent review."
+      ],
+      "home_care": [
+        "Follow nutrition plans aligned with diagnosed deficiency states.",
+        "Avoid trauma risk if platelet counts are low.",
+        "Track fatigue, pallor, fever, and bleeding symptoms.",
+        "Keep regular blood test follow-ups."
+      ],
+      "red_flags": ["Uncontrolled bleeding", "Black stools or blood vomiting", "Severe fatigue/breathlessness", "High fever with low blood counts"]
+    },
+    {
+      "name": "immunology",
+      "keywords": ["immune system", "immunodeficiency", "autoimmune", "allergy", "immunological"],
+      "category": "immunology",
+      "treatment_summary": "Immune disorders often require long-term monitoring with infection prevention and specialist-guided immunomodulatory care.",
+      "medicine_guidance": [
+        "Immunosuppressive medicines require strict clinician monitoring.",
+        "Do not self-start steroids or biologics.",
+        "Vaccination and prophylaxis decisions should be individualized.",
+        "Prompt treatment is needed for suspected serious infections."
+      ],
+      "home_care": [
+        "Follow hygiene and infection-prevention routines strictly.",
+        "Avoid known triggers in allergic/autoimmune conditions.",
+        "Keep medication adherence and lab-monitoring schedules.",
+        "Seek early care for fever or worsening inflammation."
+      ],
+      "red_flags": ["Persistent high fever", "Facial/throat swelling", "Breathing difficulty", "Sudden severe weakness"]
+    },
+    {
+      "name": "ophthalmology",
+      "keywords": ["visual system", "eye", "retina", "cornea", "optic", "ophthalm"],
+      "category": "ophthalmology",
+      "treatment_summary": "Eye conditions need diagnosis-specific therapy and early referral to prevent avoidable vision loss.",
+      "medicine_guidance": [
+        "Use eye drops/ointments only as prescribed for the diagnosed condition.",
+        "Do not use steroid eye drops without ophthalmic advice.",
+        "Infections, trauma, or glaucoma need urgent specialist evaluation.",
+        "Systemic diseases affecting vision require integrated care."
+      ],
+      "home_care": [
+        "Avoid eye rubbing and use clean hand hygiene.",
+        "Protect eyes from dust, chemicals, and trauma.",
+        "Ensure proper lighting and screen breaks.",
+        "Follow follow-up schedules for pressure/retina monitoring."
+      ],
+      "red_flags": ["Sudden vision loss", "Eye pain with redness", "Chemical injury", "Flashes/floaters with curtain-like vision loss"]
+    },
+    {
+      "name": "ent-hearing",
+      "keywords": ["ear", "mastoid", "hearing", "otitis", "vertigo", "tinnitus"],
+      "category": "ent-hearing",
+      "treatment_summary": "Ear and hearing disorders require cause-specific care with infection control, hearing assessment, and procedural management when needed.",
+      "medicine_guidance": [
+        "Use ear drops/antibiotics only after examination.",
+        "Avoid inserting oils, sticks, or unverified remedies in the ear canal.",
+        "Vertigo and sudden hearing loss need prompt evaluation.",
+        "Chronic/recurrent infections may need ENT specialist care."
+      ],
+      "home_care": [
+        "Keep ear dry and avoid trauma from cleaning tools.",
+        "Control upper respiratory infections and allergies.",
+        "Track hearing changes, discharge, and dizziness episodes.",
+        "Use hearing support devices only after proper fitting."
+      ],
+      "red_flags": ["Sudden hearing loss", "Ear discharge with fever", "Severe vertigo with vomiting", "Facial weakness"]
+    },
+    {
+      "name": "sleep-health",
+      "keywords": ["sleep-wake", "insomnia", "sleep apnea", "narcolepsy", "sleep disorder"],
+      "category": "sleep-health",
+      "treatment_summary": "Sleep disorders are managed with sleep hygiene, behavioral therapy, and medical/device interventions for selected conditions.",
+      "medicine_guidance": [
+        "Sleep medicines should be short-term and clinician-supervised.",
+        "Avoid sedative self-medication and alcohol-based sleep aids.",
+        "Sleep apnea may need formal study and CPAP-based management.",
+        "Evaluate coexisting anxiety, depression, or endocrine contributors."
+      ],
+      "home_care": [
+        "Maintain fixed sleep/wake timings daily.",
+        "Reduce caffeine, nicotine, and screen exposure before bedtime.",
+        "Use a dark, quiet sleep environment.",
+        "Track snoring, daytime sleepiness, and sleep interruptions."
+      ],
+      "red_flags": ["Breathing pauses during sleep", "Severe daytime sleep attacks", "Confusion or falls due to sedatives", "Suicidal thoughts with insomnia/depression"]
+    },
+    {
+      "name": "sexual-reproductive-health",
+      "keywords": ["sexual health", "sexually transmitted", "sti", "reproductive", "genital", "contraception"],
+      "category": "sexual-reproductive-health",
+      "treatment_summary": "Sexual and reproductive health conditions require confidential evaluation, diagnosis, partner care, and prevention counselling.",
+      "medicine_guidance": [
+        "STI treatments should follow clinician-prescribed regimens with completion of full courses.",
+        "Avoid self-medication and incomplete antibiotic use.",
+        "Partner notification/treatment may be necessary for control.",
+        "Contraceptive choices should be individualized based on medical profile."
+      ],
+      "home_care": [
+        "Use barrier protection and safe sexual practices.",
+        "Maintain genital hygiene and avoid irritant products.",
+        "Seek early testing for symptoms or high-risk exposure.",
+        "Follow counselling and follow-up plans."
+      ],
+      "red_flags": ["Genital ulcers with fever", "Severe pelvic pain", "Heavy bleeding", "Assault-related injury or risk"]
+    },
+    {
+      "name": "developmental-congenital",
+      "keywords": ["developmental anomalies", "congenital", "birth defect", "malformation", "genetic syndrome"],
+      "category": "developmental-congenital",
+      "treatment_summary": "Developmental and congenital conditions require early screening, multidisciplinary care, and long-term functional support.",
+      "medicine_guidance": [
+        "Therapies are individualized and may include medicines, procedures, or surgery.",
+        "Developmental medicines and supplements should be specialist-guided.",
+        "Regular growth and developmental assessments are essential.",
+        "Complicated cases need coordinated pediatric specialty referral."
+      ],
+      "home_care": [
+        "Use early intervention services (speech, occupational, physiotherapy) when advised.",
+        "Track developmental milestones and nutrition.",
+        "Support caregiver training and safe home adaptations.",
+        "Keep immunization and routine pediatric visits updated."
+      ],
+      "red_flags": ["Developmental regression", "Feeding failure/weight loss", "Seizure activity", "Breathing or swallowing difficulty"]
+    },
+    {
+      "name": "clinical-symptom-evaluation",
+      "keywords": ["symptoms, signs or clinical findings", "signs and symptoms", "clinical findings", "not elsewhere classified"],
+      "category": "clinical-evaluation",
+      "treatment_summary": "Symptom-based entries indicate the need for structured clinical evaluation to identify the underlying diagnosis before definitive treatment.",
+      "medicine_guidance": [
+        "Avoid repeated empirical medicine use without diagnosis.",
+        "Symptom relief may be used short-term with clinician advice.",
+        "Targeted treatment starts after relevant history, examination, and tests.",
+        "Escalate early if symptoms persist or worsen despite initial care."
+      ],
+      "home_care": [
+        "Record symptom timing, triggers, and severity trends.",
+        "Maintain hydration, rest, and nutrition support.",
+        "Follow advised investigations and follow-up timelines.",
+        "Avoid combining multiple over-the-counter products unsafely."
+      ],
+      "red_flags": ["Rapid symptom progression", "Altered consciousness", "Severe persistent pain", "Breathing difficulty or chest pain"]
+    },
+    {
+      "name": "preventive-public-health",
+      "keywords": ["factors influencing health status", "contact with health services", "preventive", "screening", "vaccination"],
+      "category": "preventive-public-health",
+      "treatment_summary": "These entries focus on prevention, screening, rehabilitation, and care pathways rather than single-disease drug treatment.",
+      "medicine_guidance": [
+        "Use preventive medicines and supplements as per public-health protocols.",
+        "Vaccination and prophylaxis schedules should follow national guidelines.",
+        "Chronic-risk management medicines need regular review.",
+        "Rehabilitation and follow-up planning are key parts of care."
+      ],
+      "home_care": [
+        "Adopt healthy diet, activity, and tobacco/alcohol risk reduction.",
+        "Complete age-appropriate screening and immunization.",
+        "Track chronic-risk parameters (BP, sugar, weight) as advised.",
+        "Use local PHC/community health services for regular preventive care."
+      ],
+      "red_flags": ["Missed high-risk follow-up", "Uncontrolled chronic risk factors", "New severe symptoms", "Medication non-adherence with deterioration"]
+    }
+  ],
+  "default": {
+    "category": "general",
+    "treatment_summary": "Care depends on clinical severity and should be guided by a licensed clinician after proper diagnosis.",
+    "medicine_guidance": [
+      "Do not self-start prescription medicines without clinical review.",
+      "Medicine choice and dose vary by age, comorbidity, and severity.",
+      "Complete prescribed courses and follow-up tests as advised.",
+      "Escalate to emergency care for rapidly worsening symptoms."
+    ],
+    "home_care": [
+      "Maintain hydration, rest, and nutrition support.",
+      "Track symptom progression and warning signs.",
+      "Use hygiene and preventive care practices.",
+      "Consult PHC/doctor if symptoms persist or recur."
+    ],
+    "red_flags": ["Severe breathing trouble", "Persistent vomiting", "Altered consciousness", "Uncontrolled bleeding"]
+  }
+}

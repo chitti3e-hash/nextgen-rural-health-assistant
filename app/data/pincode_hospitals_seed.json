@@ -1,0 +1,107 @@
+{
+  "110001": {
+    "location": "Connaught Place, New Delhi, Delhi, India",
+    "hospitals": [
+      {
+        "name": "Dr. Ram Manohar Lohia Hospital",
+        "distance_km": 2.1,
+        "address": "Baba Kharak Singh Marg, New Delhi, Delhi",
+        "latitude": 28.6262,
+        "longitude": 77.2018,
+        "source": "Seed directory"
+      },
+      {
+        "name": "Lok Nayak Hospital",
+        "distance_km": 4.5,
+        "address": "Jawaharlal Nehru Marg, Delhi",
+        "latitude": 28.6417,
+        "longitude": 77.2385,
+        "source": "Seed directory"
+      }
+    ]
+  },
+  "400001": {
+    "location": "Fort, Mumbai, Maharashtra, India",
+    "hospitals": [
+      {
+        "name": "St George Hospital",
+        "distance_km": 1.3,
+        "address": "Near CSMT, Fort, Mumbai",
+        "latitude": 18.9449,
+        "longitude": 72.8353,
+        "source": "Seed directory"
+      },
+      {
+        "name": "Gokuldas Tejpal Hospital",
+        "distance_km": 2.6,
+        "address": "Dhobi Talao, Marine Lines, Mumbai",
+        "latitude": 18.9445,
+        "longitude": 72.8276,
+        "source": "Seed directory"
+      }
+    ]
+  },
+  "560001": {
+    "location": "Bengaluru G.P.O, Karnataka, India",
+    "hospitals": [
+      {
+        "name": "Bowring and Lady Curzon Medical College Hospital",
+        "distance_km": 2.0,
+        "address": "Shivaji Nagar, Bengaluru",
+        "latitude": 12.9852,
+        "longitude": 77.6075,
+        "source": "Seed directory"
+      },
+      {
+        "name": "Victoria Hospital",
+        "distance_km": 4.9,
+        "address": "Fort Road, Bengaluru",
+        "latitude": 12.9636,
+        "longitude": 77.5745,
+        "source": "Seed directory"
+      }
+    ]
+  },
+  "600001": {
+    "location": "Chennai G.P.O, Tamil Nadu, India",
+    "hospitals": [
+      {
+        "name": "Government Stanley Medical College Hospital",
+        "distance_km": 1.8,
+        "address": "Old Jail Road, Chennai",
+        "latitude": 13.1039,
+        "longitude": 80.2887,
+        "source": "Seed directory"
+      },
+      {
+        "name": "Rajiv Gandhi Government General Hospital",
+        "distance_km": 3.7,
+        "address": "Poonamallee High Road, Chennai",
+        "latitude": 13.0801,
+        "longitude": 80.2736,
+        "source": "Seed directory"
+      }
+    ]
+  },
+  "700001": {
+    "location": "B.B.D. Bagh, Kolkata, West Bengal, India",
+    "hospitals": [
+      {
+        "name": "NRS Medical College and Hospital",
+        "distance_km": 3.3,
+        "address": "Acharya Jagadish Chandra Bose Road, Kolkata",
+        "latitude": 22.5661,
+        "longitude": 88.3701,
+        "source": "Seed directory"
+      },
+      {
+        "name": "Calcutta Medical College and Hospital",
+        "distance_km": 3.8,
+        "address": "College Street, Kolkata",
+        "latitude": 22.5741,
+        "longitude": 88.3616,
+        "source": "Seed directory"
+      }
+    ]
+  }
+}

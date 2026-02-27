@@ -1,0 +1,122 @@
+[
+  {
+    "id": "nhp-001",
+    "title": "Handwashing and infection prevention",
+    "category": "prevention",
+    "language": "en",
+    "content": "Wash hands with soap and clean water before eating, after toilet use, and after caring for a sick person. Proper hand hygiene lowers the risk of diarrhea, respiratory infections, and food-borne illness.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-002",
+    "title": "Safe drinking water basics",
+    "category": "prevention",
+    "language": "en",
+    "content": "Use boiled, filtered, or chlorinated drinking water where contamination risk exists. Store water in covered clean containers and avoid dipping unclean utensils.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-003",
+    "title": "Oral rehydration for loose motions",
+    "category": "child-health",
+    "language": "en",
+    "content": "In diarrhea, give ORS and continue regular feeding. Urgent evaluation is needed if there is blood in stool, repeated vomiting, reduced urination, excessive drowsiness, or persistent fever.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-004",
+    "title": "Seasonal flu self-care and red flags",
+    "category": "infectious",
+    "language": "en",
+    "content": "For mild flu-like symptoms, rest, hydrate, and monitor temperature. Seek immediate care for breathing difficulty, chest pain, confusion, or worsening symptoms in children, elderly, or pregnant people.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-005",
+    "title": "Hypertension screening guidance",
+    "category": "chronic",
+    "language": "en",
+    "content": "Adults should check blood pressure regularly at PHC or community camps. Lifestyle control includes low salt intake, tobacco avoidance, physical activity, and medicine adherence if prescribed.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-006",
+    "title": "Diabetes daily care",
+    "category": "chronic",
+    "language": "en",
+    "content": "Diabetes care includes regular blood sugar checks, balanced meals, activity, and prescribed medicines. Foot injury, frequent low sugar episodes, persistent vomiting, or confusion need medical review.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-007",
+    "title": "Pregnancy danger signs",
+    "category": "maternal",
+    "language": "en",
+    "content": "During pregnancy, urgent referral is required for vaginal bleeding, severe abdominal pain, swelling with headache, blurred vision, reduced fetal movements, or convulsions.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-008",
+    "title": "Newborn warmth and feeding",
+    "category": "maternal",
+    "language": "en",
+    "content": "Keep newborns warm, feed within one hour of birth, and exclusively breastfeed for six months. Immediate care is needed for fever, poor feeding, fast breathing, or lethargy.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-009",
+    "title": "Child vaccination importance",
+    "category": "child-health",
+    "language": "en",
+    "content": "Follow the Universal Immunization schedule and keep vaccination records updated. Missed doses should be completed as soon as possible through PHC or outreach session.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-010",
+    "title": "Anemia prevention in adolescents and women",
+    "category": "nutrition",
+    "language": "en",
+    "content": "Regular iron-folic acid intake, deworming as advised, and iron-rich foods help reduce anemia risk. Severe fatigue, breathlessness, or palpitations require clinical assessment.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-011",
+    "title": "Mental health early support",
+    "category": "mental-health",
+    "language": "en",
+    "content": "Persistent sadness, sleep problems, severe anxiety, or self-harm thoughts need immediate support from trained professionals. Family support and early consultation improve recovery.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-012",
+    "title": "Tuberculosis symptom awareness",
+    "category": "infectious",
+    "language": "en",
+    "content": "Cough for more than two weeks, fever, weight loss, or night sweats may indicate TB and should be tested at a government facility. Complete the full treatment course once diagnosed.",
+    "source": "National Health Portal (India)"
+  },
+  {
+    "id": "nhp-013",
+    "title": "मधुमेह की दैनिक देखभाल",
+    "category": "chronic",
+    "language": "hi",
+    "content": "मधुमेह में नियमित शुगर जांच, संतुलित भोजन, शारीरिक गतिविधि और निर्धारित दवा जरूरी है। बार-बार लो शुगर, उल्टी, भ्रम या पैरों में घाव होने पर तुरंत डॉक्टर से मिलें।",
+    "source": "नेशनल हेल्थ पोर्टल (भारत)"
+  },
+  {
+    "id": "nhp-014",
+    "title": "उच्च रक्तचाप नियंत्रण",
+    "category": "chronic",
+    "language": "hi",
+    "content": "नमक कम लेना, तंबाकू से बचना, नियमित चलना और BP जांच उच्च रक्तचाप नियंत्रण में मदद करते हैं। सीने में दर्द, तेज सिरदर्द या धुंधला दिखना आपात स्थिति हो सकती है।",
+    "source": "नेशनल हेल्थ पोर्टल (भारत)"
+  },
+  {
+    "id": "nhp-015",
+    "title": "गर्भावस्था में खतरे के संकेत",
+    "category": "maternal",
+    "language": "hi",
+    "content": "गर्भावस्था में खून आना, तेज सिरदर्द, सूजन, धुंधलापन, पेट में तेज दर्द या बच्चे की हलचल कम होना गंभीर संकेत हैं। ऐसी स्थिति में तुरंत अस्पताल जाएं।",
+    "source": "नेशनल हेल्थ पोर्टल (भारत)"
+  }
+]

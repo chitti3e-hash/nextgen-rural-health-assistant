@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Ayushman Bharat PM-JAY",
+    "keywords": ["ayushman", "pmjay", "insurance", "golden card", "health card", "आयुष्मान"],
+    "summaries": {
+      "en": "Provides cashless secondary and tertiary care coverage for eligible low-income families through empaneled hospitals.",
+      "hi": "योग्य परिवारों को पैनल अस्पतालों में कैशलेस सेकेंडरी और टर्शियरी इलाज की सुविधा देता है।"
+    },
+    "next_steps": [
+      "Check eligibility using ration card/SECC records at nearest CSC or Ayushman Mitra desk.",
+      "Carry Aadhaar and family ID documents for e-card generation.",
+      "Use the PM-JAY hospital list to locate an empaneled facility nearby."
+    ],
+    "source": "https://pmjay.gov.in"
+  },
+  {
+    "name": "Janani Suraksha Yojana (JSY)",
+    "keywords": ["jsy", "pregnancy benefit", "janani", "maternity scheme", "जननी", "pregnant"],
+    "summaries": {
+      "en": "Promotes institutional delivery by providing financial assistance to eligible pregnant women, especially in rural and low-income households.",
+      "hi": "यह योजना पात्र गर्भवती महिलाओं को संस्थागत प्रसव के लिए वित्तीय सहायता देती है, खासकर ग्रामीण परिवारों में।"
+    },
+    "next_steps": [
+      "Register pregnancy early at sub-center/PHC with ASHA support.",
+      "Keep MCP card and bank details ready for benefit transfer.",
+      "Confirm district-specific eligibility criteria with ANM/PHC."
+    ],
+    "source": "https://nhm.gov.in"
+  },
+  {
+    "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "keywords": ["pmmvy", "maternal", "maternity", "matru", "pregnancy money"],
+    "summaries": {
+      "en": "Provides conditional cash incentives for pregnant and lactating women for improved health-seeking and nutrition practices.",
+      "hi": "यह योजना गर्भवती और धात्री महिलाओं को पोषण और स्वास्थ्य सेवाओं के उपयोग के लिए चरणबद्ध नकद सहायता देती है।"
+    },
+    "next_steps": [
+      "Register at Anganwadi center or health facility.",
+      "Submit required identity, pregnancy, and bank account documents.",
+      "Track installment status through local health worker."
+    ],
+    "source": "https://wcd.gov.in"
+  },
+  {
+    "name": "eSanjeevani Telemedicine",
+    "keywords": ["esanjeevani", "telemedicine", "online doctor", "video consult", "remote consultation"],
+    "summaries": {
+      "en": "Government telemedicine platform for remote doctor consultation, useful in low-access areas before physical referral.",
+      "hi": "सरकारी टेलीमेडिसिन प्लेटफ़ॉर्म जो दूरस्थ क्षेत्रों में डॉक्टर से ऑनलाइन परामर्श की सुविधा देता है।"
+    },
+    "next_steps": [
+      "Use smartphone or Common Service Center for registration.",
+      "Keep previous prescriptions and test reports ready.",
+      "Follow referral advice for in-person care when required."
+    ],
+    "source": "https://esanjeevani.mohfw.gov.in"
+  }
+]
+

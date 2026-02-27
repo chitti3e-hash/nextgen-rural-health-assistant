@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  --bg: #0b1324;
+  --card: #121f3a;
+  --text: #dce8ff;
+  --subtext: #94a7cf;
+  --accent: #6aa6ff;
+  --danger: #ff6b6b;
+  --ok: #49d18d;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1b2a56, var(--bg));
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem 2rem;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--subtext);
+}
+
+.card {
+  background: rgba(18, 31, 58, 0.9);
+  border: 1px solid #304675;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.7rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+textarea,
+select,
+input {
+  background: #0a142c;
+  color: var(--text);
+  border: 1px solid #3b568f;
+  border-radius: 8px;
+  padding: 0.65rem;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.hospital-controls {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+
+.hospital-controls input {
+  min-width: 230px;
+}
+
+.disease-result {
+  white-space: pre-wrap;
+  background: #0a142c;
+  border: 1px solid #3b568f;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  background: #224275;
+  color: #e9f1ff;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #2b5596;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: #2c3e67;
+}
+
+.badge.critical {
+  background: #5c1f2d;
+  color: #ffd4d4;
+}
+
+.badge.normal {
+  background: #204e39;
+  color: #d9ffe6;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #f6d28f;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
