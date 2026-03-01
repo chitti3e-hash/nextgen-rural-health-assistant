@@ -28,6 +28,48 @@ const langMap = {
 };
 
 let lastAnswer = "";
+let lastAnswerLanguage = "en";
+let activeRecognition = null;
+let isListening = false;
+
+function detectLanguageFromText(text) {
+  if (!text) {
+    return null;
+  }
+  if (/[\u0B80-\u0BFF]/.test(text)) {
+    return "ta";
+  }
+  if (/[\u0C00-\u0C7F]/.test(text)) {
+    return "te";
+  }
+  if (/[\u0980-\u09FF]/.test(text)) {
+    return "bn";
+  }
+  if (/[\u0900-\u097F]/.test(text)) {
+    return "hi";
+  }
+  if (/[a-zA-Z]/.test(text)) {
+    return "en";
+  }
+  return null;
+}
+
+function setVoiceButtonState(listening) {
+  isListening = listening;
+  voiceBtn.textContent = listening ? "⏹ Stop Listening" : "🎤 Voice Input";
+}
+
+function getVoiceErrorMessage(error) {
+  const messageByCode = {
+    "not-allowed": "Microphone permission denied. Allow mic access in browser settings.",
+    "service-not-allowed": "Speech service is blocked. Enable speech recognition in browser settings.",
+    "network": "Speech recognition network error. Check your internet connection.",
+    "no-speech": "No speech detected. Please try again and speak clearly.",
+    "audio-capture": "No microphone found. Connect or enable a microphone.",
+    "aborted": "Voice capture stopped.",
+  };
+  return messageByCode[error] || "Voice capture failed. Please type your question.";
+}
 
 function renderList(container, items, formatter) {
   container.innerHTML = "";
@@ -47,7 +89,9 @@ function renderList(container, items, formatter) {
 
 async function askAssistant(mode = "text") {
   const query = queryInput.value.trim();
-  const language = languageSelect.value;
+  const selectedLanguage = languageSelect.value;
+  const detectedLanguage = detectLanguageFromText(query);
+  const language = detectedLanguage || selectedLanguage;
   const location = locationInput.value.trim();
   const ageValue = ageYearsInput.value.trim();
   const ageYears = ageValue === "" ? null : Number(ageValue);
@@ -64,32 +108,45 @@ async function askAssistant(mode = "text") {
   nextStepsEl.innerHTML = "";
   sourcesEl.innerHTML = "";
 
-  const response = await fetch("/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      query,
-      language,
-      mode,
-      age_years: ageYears,
-      location: location || null,
-    }),
-  });
-
-  if (!response.ok) {
-    answerEl.textContent = "Request failed. Please try again.";
-    return;
+  if (detectedLanguage && languageSelect.value !== detectedLanguage) {
+    languageSelect.value = detectedLanguage;
   }
 
-  const payload = await response.json();
-  lastAnswer = payload.answer;
-  answerEl.textContent = payload.answer;
-  disclaimerEl.textContent = payload.disclaimer;
-  urgencyEl.textContent = `Status: ${payload.urgency.toUpperCase()} | Confidence: ${payload.confidence}`;
-  urgencyEl.className = `badge ${payload.urgency}`;
+  try {
+    const response = await fetch("/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query,
+        language,
+        mode,
+        age_years: ageYears,
+        location: location || null,
+      }),
+    });
 
-  renderList(nextStepsEl, payload.next_steps, (step) => step);
-  renderList(sourcesEl, payload.sources, (source) => `${source.title} (${source.source})`);
+    if (!response.ok) {
+      answerEl.textContent = "Request failed. Please try again.";
+      return;
+    }
+
+    const payload = await response.json();
+    lastAnswer = payload.answer;
+    lastAnswerLanguage = payload.language || language;
+    if (payload.language && languageSelect.value !== payload.language) {
+      languageSelect.value = payload.language;
+    }
+
+    answerEl.textContent = payload.answer;
+    disclaimerEl.textContent = payload.disclaimer;
+    urgencyEl.textContent = `Status: ${payload.urgency.toUpperCase()} | Confidence: ${payload.confidence}`;
+    urgencyEl.className = `badge ${payload.urgency}`;
+
+    renderList(nextStepsEl, payload.next_steps, (step) => step);
+    renderList(sourcesEl, payload.sources, (source) => `${source.title} (${source.source})`);
+  } catch (error) {
+    answerEl.textContent = "Network error. Please check server and try again.";
+  }
 }
 
 async function lookupHospitals() {
@@ -176,24 +233,56 @@ voiceBtn.addEventListener("click", () => {
     answerEl.textContent = "Voice input is not supported in this browser.";
     return;
   }
+  const runningOnLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  if (!window.isSecureContext && !runningOnLocalhost) {
+    answerEl.textContent = "Voice input needs HTTPS. Open the secure site URL, then try again.";
+    return;
+  }
+
+  if (isListening && activeRecognition) {
+    activeRecognition.stop();
+    setVoiceButtonState(false);
+    return;
+  }
 
   const recognition = new SpeechRecognition();
+  activeRecognition = recognition;
   recognition.lang = langMap[languageSelect.value] || "en-IN";
   recognition.interimResults = false;
+  recognition.continuous = false;
   recognition.maxAlternatives = 1;
 
-  answerEl.textContent = "Listening...";
-  recognition.start();
+  recognition.onstart = () => {
+    setVoiceButtonState(true);
+    answerEl.textContent = "Listening...";
+  };
 
   recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
+    const transcript = event.results[0][0].transcript.trim();
     queryInput.value = transcript;
+    const detectedLanguage = detectLanguageFromText(transcript);
+    if (detectedLanguage && languageSelect.value !== detectedLanguage) {
+      languageSelect.value = detectedLanguage;
+    }
     askAssistant("voice");
   };
 
-  recognition.onerror = () => {
-    answerEl.textContent = "Voice capture failed. Please type your question.";
+  recognition.onerror = (event) => {
+    answerEl.textContent = getVoiceErrorMessage(event.error);
   };
+
+  recognition.onend = () => {
+    setVoiceButtonState(false);
+    activeRecognition = null;
+  };
+
+  try {
+    recognition.start();
+  } catch (error) {
+    setVoiceButtonState(false);
+    activeRecognition = null;
+    answerEl.textContent = "Could not start voice input. Refresh and try again.";
+  }
 });
 
 speakBtn.addEventListener("click", () => {
@@ -201,6 +290,6 @@ speakBtn.addEventListener("click", () => {
     return;
   }
   const utterance = new SpeechSynthesisUtterance(lastAnswer);
-  utterance.lang = langMap[languageSelect.value] || "en-IN";
+  utterance.lang = langMap[lastAnswerLanguage] || "en-IN";
   window.speechSynthesis.speak(utterance);
 });

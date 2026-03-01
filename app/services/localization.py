@@ -79,9 +79,26 @@ def normalize_language(language: str | None) -> str:
     return code if code in SUPPORTED_LANGUAGES else "en"
 
 
+def detect_language_from_text(text: str | None) -> str:
+    if not text:
+        return "und"
+
+    if any("\u0B80" <= char <= "\u0BFF" for char in text):
+        return "ta"
+    if any("\u0C00" <= char <= "\u0C7F" for char in text):
+        return "te"
+    if any("\u0980" <= char <= "\u09FF" for char in text):
+        return "bn"
+    if any("\u0900" <= char <= "\u097F" for char in text):
+        return "hi"
+    if any("a" <= char.lower() <= "z" for char in text):
+        return "en"
+
+    return "und"
+
+
 def t(language: str, key: str) -> str:
     lang = normalize_language(language)
     if key in LOCALIZED_TEXT[lang]:
         return LOCALIZED_TEXT[lang][key]
     return LOCALIZED_TEXT["en"].get(key, key)
-

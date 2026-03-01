@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from app.models import ChatRequest, ChatResponse, DiseaseItem, DiseaseLookupResponse, HospitalLookupResponse
 from app.services.diseases import DiseaseService
 from app.services.hospitals import HospitalLocator, HospitalLookupError, InvalidPincodeError
-from app.services.localization import normalize_language
+from app.services.localization import detect_language_from_text, normalize_language
 from app.services.pregnancy import PregnancyService
 from app.services.retriever import KnowledgeRetriever
 from app.services.responder import HealthAssistant
@@ -69,7 +69,9 @@ def health_check() -> dict:
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(payload: ChatRequest) -> ChatResponse:
-    language = normalize_language(payload.language)
+    selected_language = normalize_language(payload.language)
+    detected_language = detect_language_from_text(payload.query)
+    language = selected_language if detected_language == "und" else normalize_language(detected_language)
     return assistant.answer(
         query=payload.query,
         language=language,
